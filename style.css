@@ -1,0 +1,77 @@
+p {
+    text-align: center;
+}
+  /* Ripple effect */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 0, 0.5);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  /* Custom overlay text on hover */
+  #custom-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  #custom-btn:hover #custom-text {
+    opacity: 0;
+  }
+
+  #custom-btn:hover #custom-overlay {
+    opacity: 1;
+  }
+
+  /* Feature Boxes */
+  .feature-box {
+    position: relative;
+    flex: 1 1 200px;
+    min-width: 200px;
+    max-width: 250px;
+    height: 150px;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .feature-box:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  }
+
+  .feature-lock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0.7;
+  }
+
+  .feature-label {
+    text-align: center;
+    z-index: 1;
+  }
